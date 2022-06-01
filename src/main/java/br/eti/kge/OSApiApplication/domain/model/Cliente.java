@@ -4,6 +4,12 @@
  */
 package br.eti.kge.OSApiApplication.domain.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  *
  * @author Amethyst
@@ -12,7 +18,7 @@ package br.eti.kge.OSApiApplication.domain.model;
 public class Cliente {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTIFY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String nome;
     private String email;

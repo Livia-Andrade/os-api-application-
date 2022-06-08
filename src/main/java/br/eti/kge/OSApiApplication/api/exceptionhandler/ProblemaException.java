@@ -6,12 +6,20 @@
 package br.eti.kge.OSApiApplication.api.exceptionhandler;
 
 import java.time.LocalDateTime;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 /**
  *
  * @author devsys-b
  */
 public class ProblemaException {
+
     private Integer status;
 
     public LocalDateTime getDatahora() {
@@ -39,4 +47,35 @@ public class ProblemaException {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
-}
+
+    private void setDataHora(LocalDateTime now) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @ControllerAdvice
+    public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
+
+        @Override
+        protected ResponseEntity<Object> handleMethodArgumentNotValid(
+            MethodArgumentNotValidException ex,
+            HttpHeaders headers, 
+            HttpStatus  status, 
+            WebRequest request) {
+            
+            ProblemaException problema = new ProblemaException();
+            problema.setStatus(status.value());
+            problema.setTitulo("Um ou mais campos inválidos Tente novamente.");
+            problema.setDataHora(LocalDateTime.now());
+            
+            
+            return super.handleExceptionInternal(ex, problema, headers, status, request);
+        }
+        }
+
+      
+    }
+
+
+
+
+

@@ -4,6 +4,7 @@
  */
 package com.andrade.OSApiApplication.api.exceptionhandler;
 
+import com.andrade.OSApiApplication.domain.exception.DomainException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,13 +17,14 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 /**
  *
  * @author Amethyst
  */
 @ControllerAdvice
-public class ApiExceptionHandler {
+public class ApiExceptionHandler extends ResponseEntityExceptionHandler{
     
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(

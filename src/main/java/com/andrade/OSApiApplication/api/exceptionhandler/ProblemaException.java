@@ -7,13 +7,13 @@ package com.andrade.OSApiApplication.api.exceptionhandler;
 import java.time.LocalDateTime;
 import java.util.List;
 
+
+
 /**
  *
  * @author Amethyst
  */
 public class ProblemaException {
-
-    public class ProblemaException {
 
         private Integer status;
         private LocalDateTime dataHora;

@@ -5,6 +5,7 @@
 package com.andrade.OSApiApplication.api.controller;
 
 import com.andrade.OSApiApplication.domain.model.OrdemServico;
+import com.andrade.OSApiApplication.domain.service.OrdemServicoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -7,15 +7,21 @@ package com.andrade.OSApiApplication.domain.model;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Objects;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  *
  * @author Amethyst
  */
-
 @Entity
 public class OrdemServico {
-     @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
@@ -25,7 +31,7 @@ public class OrdemServico {
     private String descricao;
     private BigDecimal preco;
     
-    @Enumerated(EnumType.STRING)
+     @Enumerated(EnumType.STRING)
     private StatusOrdemServico status;
     
     private LocalDateTime dataAbertura;
@@ -123,7 +129,4 @@ public class OrdemServico {
         this.dataFinalizacao = dataFinalizacao;
     }
 
-    
-    
 }
-

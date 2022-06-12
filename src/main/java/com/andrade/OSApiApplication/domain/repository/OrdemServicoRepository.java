@@ -5,11 +5,12 @@
 package com.andrade.OSApiApplication.domain.repository;
 
 import com.andrade.OSApiApplication.domain.model.OrdemServico;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
  * @author Amethyst
  */
-public class OrdemServicoRepository  extends JpaRepository<OrdemServico, Long> {
-    
+public interface OrdemServicoRepository extends JpaRepository<OrdemServico, Long> {
+
 }

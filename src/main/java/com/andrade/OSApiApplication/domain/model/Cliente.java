@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.eti.kge.OSApiApplication.domain.model;
+package com.andrade.OSApiApplication.domain.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,18 +13,15 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-
-
-        
-
 /**
  *
  * @author Amethyst
  */
+
 @Entity
 public class Cliente {
-    
-    @Id 
+  
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     
@@ -39,11 +36,11 @@ public class Cliente {
     
     @NotBlank
     @Size(max = 20)
-    @Column (name ="telefone")
+    @Column(name = "telefone")
     private String fone;
 
     public Cliente() {
-        // Construtor Default
+        //Construtor Default
     }
 
     public Cliente(long id, String nome, String email, String fone) {
@@ -88,7 +85,7 @@ public class Cliente {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 97 * hash + (int) (this.id ^ (this.id >>> 32));
+        hash = 37 * hash + (int) (this.id ^ (this.id >>> 32));
         return hash;
     }
 
@@ -104,11 +101,14 @@ public class Cliente {
             return false;
         }
         final Cliente other = (Cliente) obj;
-        return this.id == other.id;
+        if (this.id != other.id) {
+            return false;
+        }
+        return true;
     }
-
-  
-   
     
     
 }
+    
+    
+

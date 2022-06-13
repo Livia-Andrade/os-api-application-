@@ -5,6 +5,7 @@
 package com.andrade.OSApiApplication.domain.service;
 
 import com.andrade.OSApiApplication.domain.model.OrdemServico;
+import com.andrade.OSApiApplication.domain.model.StatusOrdemServico;
 import com.andrade.OSApiApplication.domain.repository.OrdemServicoRepository;
 import java.time.LocalDateTime;
 import org.springframework.beans.factory.annotation.Autowired;

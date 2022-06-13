@@ -4,6 +4,7 @@
  */
 package com.andrade.OSApiApplication.domani.service;
 
+import com.andrade.OSApiApplication.domain.exception.DomainException;
 import com.andrade.OSApiApplication.domain.model.Cliente;
 import com.andrade.OSApiApplication.domain.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;

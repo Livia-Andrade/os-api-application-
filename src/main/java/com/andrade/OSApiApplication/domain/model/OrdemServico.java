@@ -31,7 +31,7 @@ public class OrdemServico {
     private String descricao;
     private BigDecimal preco;
     
-     @Enumerated(EnumType.STRING)
+    @Enumerated (EnumType.STRING)
     private StatusOrdemServico status;
     
     private LocalDateTime dataAbertura;
